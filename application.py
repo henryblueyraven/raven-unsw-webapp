@@ -27,7 +27,7 @@ def sql():
 def analysis():
     group, liveval  = sql()
     table1 = group.to_html(classes=['table', 'table-hover', 'table-bordered', 'thead-dark'], 
-           float_format=lambda x: '{0:.3f}s'.format(x))
+           float_format=lambda x: '{0:.3f}'.format(x))
     table2 = liveval.to_html(classes=['table', 'table-hover', 'table-bordered', 'thead-dark'], 
-           float_format=lambda x: '{0:.3f}s'.format(x))
+           float_format=lambda x: '{0:.3f}'.format(x))
     return render_template("index.html", data=table1, data2=table2)
