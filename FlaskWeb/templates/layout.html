@@ -23,8 +23,21 @@
         }
     }
 });
-
-
+</script>
+<script>
+        $(document).ready(function(){
+            var t = $("#livetable").find("tbody");
+            if (t.length == 1)
+            {
+                t.attr("id", "livetablebody");
+            }
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#livetablebody tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
 </script>
 
 <style>
